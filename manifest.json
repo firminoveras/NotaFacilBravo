@@ -1,0 +1,27 @@
+{
+    "name": "Nota Fácil Bravo",
+    "version": "1.0",
+    "description": "Insira notas de forma mais rápido em turmas no sistema Bravo",
+    "icons": {
+        "16": "img/icon16.png",
+        "32": "img/icon32.png",
+        "128": "img/icon128.png"
+    },
+    "action": {
+        "default_popup": "index.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://swsouza100.sipf.com.br/sipfalpha/Escolaon/Turma/*"
+            ],
+            "run_at": "document_end", 
+            "js": ["jquery-3.7.1.min.js", "content.js"],
+            "all_frames": false
+        }
+    ],
+    "manifest_version": 3,
+    "permissions": [
+        "storage"
+    ]
+}
