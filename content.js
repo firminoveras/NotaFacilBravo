@@ -1,106 +1,122 @@
-var titleNota = document.createElement("h2")
-titleNota.innerHTML = "Nota-Fácil Bravo"
-
-var titleFreq = document.createElement("h2")
-titleFreq.innerHTML = "Freq-Fácil Bravo"
-
-var buttonApplyNota = document.createElement("button");
-buttonApplyNota.innerHTML = "Aplicar Nota Fácil";
-buttonApplyNota.className = "btn btn-sm btn-facebook applyNotaFacilBravo";
-buttonApplyNota.type = "button";
-
-var buttonClearNota = document.createElement("button");
-buttonClearNota.innerHTML = "Limpar todos os campos";
-buttonClearNota.className = "btn btn-sm btn-facebook";
-buttonClearNota.type = "button";
-
-var buttonFrequencia = document.createElement("button");
-buttonFrequencia.innerHTML = "Gerar Atalhos";
-buttonFrequencia.className = "btn btn-sm btn-facebook";
-buttonFrequencia.type = "button";
+// MARK: Notas
+var containerNota = document.createElement("ol")
+containerNota.className = "centro content-container";
+containerNota.hidden = true
 
 var buttonVisibilityNota = document.createElement("button");
-buttonVisibilityNota.style = "margin: 0 3px;";
-buttonVisibilityNota.innerHTML = "Mostrar NotaFácil";
+buttonVisibilityNota.style = "margin: 0 3px; background: darkseagreen;border-radius: 10px 10px 0 0; font-weight: bold; color: white; font-size: 18px";
+buttonVisibilityNota.innerHTML = "NotaFácil";
 buttonVisibilityNota.className = "btn btn-sm";
 buttonVisibilityNota.type = "button";
 
-var buttonVisibilityFreq = document.createElement("button");
-buttonVisibilityNota.style = "margin: 0 3px;";
-buttonVisibilityFreq.innerHTML = "Mostrar FreqFácil";
-buttonVisibilityFreq.className = "btn btn-sm";
-buttonVisibilityFreq.type = "button";
+var titleNota=  document.createElement("h2")
+titleNota.innerHTML = "Nota-Fácil Bravo"
 
+var subtitleNota=  document.createElement("h6")
+subtitleNota.innerHTML = "Desenvolvido por Firmino Veras"
 
-var divMainButtons = document.createElement("div");
-divMainButtons.style = "text-align: center;"
+var contentNota = document.createElement("textarea")
+contentNota.style = "resize: vertical; height: 150px; font-size: 9px; font-family: monospace; border: none;border-radius: 18px 18px 0 0;"
+contentNota.setAttribute("spellcheck", "false")
 
 var delayMsNota = document.createElement("input")
+delayMsNota.style = "border: none; font-size: 14px;"
 delayMsNota.type = "number"
 delayMsNota.min = "50"
 delayMsNota.max = "5000"
 delayMsNota.step = "50"
 delayMsNota.value = "100"
 
+var delayMsLabelNota = document.createElement("label")
+delayMsLabelNota.style = "border: none; font-size: 14px;"
+delayMsLabelNota.innerHTML = "Intervalo(ms): "
+
+var delayDivNota = document.createElement("div");
+delayDivNota.style = "background: white; border-radius: 0 0 16px 16px; padding: 2px 0;"
+delayDivNota.appendChild(delayMsLabelNota)
+delayDivNota.appendChild(delayMsNota)
+
+var emptyNamesLabelNota = document.createElement("textarea")
+emptyNamesLabelNota.hidden = true
+
+var buttonClearNota = document.createElement("button");
+buttonClearNota.style = "margin: 8px 0px; border-radius: 18px; background: firebrick; color: white;"
+buttonClearNota.innerHTML = "Limpar todos os campos";
+buttonClearNota.className = "btn btn-sm";
+buttonClearNota.type = "button";
+
+var buttonApplyNota = document.createElement("button");
+buttonApplyNota.style = "border-radius: 18px;";
+buttonApplyNota.innerHTML = "Aplicar Nota Fácil";
+buttonApplyNota.className = "btn btn-sm btn-facebook applyNotaFacilBravo";
+buttonApplyNota.type = "button";
+
+
+containerNota.appendChild(titleNota)
+containerNota.appendChild(subtitleNota)
+containerNota.appendChild(contentNota)
+containerNota.appendChild(delayDivNota)
+containerNota.appendChild(buttonClearNota)
+containerNota.appendChild(buttonApplyNota)
+containerNota.appendChild(emptyNamesLabelNota)
+
+// MARK: Frequência
+var containerFreq = document.createElement("ol")
+containerFreq.className = "centro content-container";
+containerFreq.hidden = true
+
+var buttonVisibilityFreq = document.createElement("button");
+buttonVisibilityFreq.style = "margin: 0 3px; background: cornflowerblue;border-radius: 10px 10px 0 0; font-weight: bold; color: white; font-size: 18px";
+buttonVisibilityFreq.innerHTML = "FreqFácil";
+buttonVisibilityFreq.className = "btn btn-sm";
+buttonVisibilityFreq.type = "button";
+
+var contentFreq = document.createElement("textarea")
+contentFreq.style = "resize: vertical; height: 150px; font-size: 9px; font-family: monospace; border: none;border-radius: 18px 18px 0 0;"
+contentFreq.setAttribute("spellcheck", "false")
+
+var titleFreq = document.createElement("h2")
+titleFreq.innerHTML = "Freq-Fácil Bravo"
+
+var subtitleFreq = document.createElement("h6")
+subtitleFreq.innerHTML = "Desenvolvido por Firmino Veras"
+
+var delayMsLabelFreq = document.createElement("label")
+delayMsLabelFreq.style = "border: none; font-size: 14px;"
+delayMsLabelFreq.innerHTML = "Intervalo(ms): "
+
 var delayMsFreq = document.createElement("input")
+delayMsFreq.style = "border: none; font-size: 14px;"
 delayMsFreq.type = "number"
 delayMsFreq.min = "50"
 delayMsFreq.max = "5000"
 delayMsFreq.step = "50"
 delayMsFreq.value = "100"
 
-var delayMsLabelNota = document.createElement("label")
-delayMsLabelNota.innerHTML = "Intervalo(ms): "
+var delayDivFreq = document.createElement("div");
+delayDivFreq.style = "background: white; border-radius: 0 0 16px 16px; padding: 2px 0;"
+delayDivFreq.appendChild(delayMsLabelFreq)
+delayDivFreq.appendChild(delayMsFreq)
 
-var delayMsLabelFreq = document.createElement("label")
-delayMsLabelFreq.innerHTML = "Intervalo(ms): "
+var buttonFrequencia = document.createElement("button");
+buttonFrequencia.style = "border-radius: 18px;";
+buttonFrequencia.innerHTML = "Gerar Atalhos";
+buttonFrequencia.className = "btn btn-sm btn-facebook";
+buttonFrequencia.type = "button";
 
-var emptyNamesLabel = document.createElement("textarea")
-emptyNamesLabel.hidden = true
+var linesFreq = document.createElement("li")
+linesFreq.style = "background: white; border-radius: 12px; margin: 12px 0;"
 
-var containerNota = document.createElement("ol")
-containerNota.className = "centro content-container";
-containerNota.hidden = true
+containerFreq.appendChild(titleFreq)
+containerFreq.appendChild(subtitleFreq)
+containerFreq.appendChild(contentFreq)
+containerFreq.appendChild(delayDivFreq)
+containerFreq.appendChild(linesFreq)
+containerFreq.appendChild(buttonFrequencia)
 
-var containerFreq = document.createElement("ol")
-containerFreq.className = "centro content-container";
-containerFreq.hidden = true
-
-var line1Nota = document.createElement("li")
-var line2Nota = document.createElement("li")
-var line3Nota = document.createElement("li")
-var line4Nota = document.createElement("li")
-var line5Nota = document.createElement("li")
-
-line1Nota.appendChild(titleNota)
-line2Nota.appendChild(delayMsLabelNota)
-line2Nota.appendChild(delayMsNota)
-line3Nota.appendChild(buttonClearNota)
-line4Nota.appendChild(buttonApplyNota)
-line5Nota.appendChild(emptyNamesLabel)
-
-containerNota.appendChild(line1Nota)
-containerNota.appendChild(line2Nota)
-containerNota.appendChild(line3Nota)
-containerNota.appendChild(line4Nota)
-containerNota.appendChild(line5Nota)
-
-
-var line1Freq = document.createElement("li")
-var line2Freq = document.createElement("li")
-var line3Freq = document.createElement("li")
-var line4Freq = document.createElement("li")
-
-line1Freq.appendChild(titleFreq)
-line2Freq.appendChild(delayMsLabelFreq)
-line2Freq.appendChild(delayMsFreq)
-line3Freq.appendChild(buttonFrequencia)
-
-containerFreq.appendChild(line1Freq)
-containerFreq.appendChild(line2Freq)
-containerFreq.appendChild(line3Freq)
-containerFreq.appendChild(line4Freq)
-
+// MARK: Main
+var divMainButtons = document.createElement("div");
+divMainButtons.style = "text-align: center;"
 divMainButtons.appendChild(buttonVisibilityNota)
 divMainButtons.appendChild(buttonVisibilityFreq)
 
@@ -126,28 +142,29 @@ var visibilityFreq = false
 
 buttonVisibilityNota.addEventListener("click", function () {
   visibilityNota = !visibilityNota
+  containerFreq.style = "display: none;"
   visibilityFreq = false
   containerFreq.hidden = true
-  buttonVisibilityFreq.innerHTML = "Mostrar FFBravo"
   if (visibilityNota) {
+    containerNota.style = "display: flex; flex-direction: column; width: 50%; margin: 0 auto; background: darkseagreen; padding: 12px; border-radius: 12px;"
     containerNota.hidden = false
-    buttonVisibilityNota.innerHTML = "Ocultar NFBravo"
   } else {
+    containerNota.style = "display: none;"
     containerNota.hidden = true
-    buttonVisibilityNota.innerHTML = "Mostrar NFBravo"
   }
 })
+
 buttonVisibilityFreq.addEventListener("click", function () {
   visibilityFreq = !visibilityFreq
+  containerNota.style = "display: none;"
   visibilityNota = false
   containerNota.hidden = true
-  buttonVisibilityNota.innerHTML = "Mostrar NFBravo"
   if (visibilityFreq) {
+    containerFreq.style = "display: flex; flex-direction: column; width: 50%; margin: 0 auto; background: cornflowerblue; padding: 12px; border-radius: 12px;"
     containerFreq.hidden = false
-    buttonVisibilityFreq.innerHTML = "Ocultar FFBravo"
   } else {
+    containerFreq.style = "display: none;"
     containerFreq.hidden = true
-    buttonVisibilityFreq.innerHTML = "Mostrar FFBravo"
   }
 })
 
@@ -193,146 +210,141 @@ buttonClearNota.addEventListener("click", function () {
 })
 
 buttonFrequencia.addEventListener("click", function () {
-  chrome.storage.local.get(["key"], function (result) {
-    line4Freq.replaceChildren()
-    var count = result.key.split("\n")[0].split("\t").length-1
-    var lines = result.key.split("\n")
-    let hasHeader = true
+  let result = contentFreq.value
+  linesFreq.replaceChildren()
+  var count = result.split("\n")[0].split("\t").length-1
+  var lines = result.split("\n")
+  let hasHeader = true
 
-    if(lines[0].includes("FALSO") || lines[0].includes("VERDADEIRO")){
-      hasHeader = false
-    }
+  if(lines[0].includes("FALSO") || lines[0].includes("VERDADEIRO")){
+    hasHeader = false
+  }
 
-    if(count > 0){
-      for(let i = 0; i< count; i++){
-        var b = document.createElement("button");
-        b.style = "margin: 0 3px;"
-        if(hasHeader){
-          b.innerHTML = lines[0].split("\t")[i+1]
-        }else{
-          b.innerHTML = "Dia "+(i+1);
-        }
-        b.className = "btn btn-sm";
-        b.type = "button";
-        b.addEventListener("click", function(){
+  if(count > 0){
+    for(let i = 0; i< count; i++){
+      var b = document.createElement("button");
+      b.style = "margin: 3px;"
+      if(hasHeader){
+        b.innerHTML = lines[0].split("\t")[i+1]
+      }else{
+        b.innerHTML = "Dia "+(i+1);
+      }
+      b.className = "btn btn-sm";
+      b.type = "button";
+      b.addEventListener("click", function(){
 
-          var falseNames = []
-          let clicks = []
-          lines.forEach(function(line){
-            if(line.split("\t")[i+1] == "FALSO"){
-              falseNames.push(line.split("\t")[0])
+        var falseNames = []
+        let clicks = []
+        lines.forEach(function(line){
+          if(line.split("\t")[i+1] == "FALSO"){
+            falseNames.push(line.split("\t")[0])
+          }
+        })
+
+        let a = document.getElementById("lista-alunos").getElementsByTagName("a")
+        falseNames.forEach(function(name){
+          Array.from(a).forEach(function(innerA){
+            var innerButton = simplifyName(innerA.innerHTML.toLowerCase())
+            var innerName = simplifyName(name.toLowerCase())
+            if(innerButton.includes(innerName)){
+              clicks.push(innerA)
             }
           })
-
-          let a = document.getElementById("lista-alunos").getElementsByTagName("a")
-          falseNames.forEach(function(name){
-            Array.from(a).forEach(function(innerA){
-              var innerButton = simplifyName(innerA.innerHTML.toLowerCase())
-              var innerName = simplifyName(name.toLowerCase())
-              if(innerButton.includes(innerName)){
-                clicks.push(innerA)
-              }
-            })
-          })
-          delayedClicks(clicks, delayMsFreq.value)
         })
-        line4Freq.appendChild(b)
-      }
+        delayedClicks(clicks, delayMsFreq.value)
+      })
+      linesFreq.appendChild(b)
     }
-
-
-  });
+  }
 });
 
 buttonApplyNota.addEventListener("click", function () {
-  chrome.storage.local.get(["key"], function (result) {
-    emptyNamesLabel.innerHTML = ""
-    emptyNamesLabel.hidden = true
-    const studants = []
-    const studantsElements = []
+  let result = contentNota.value
+  emptyNamesLabelNota.innerHTML = ""
+  emptyNamesLabelNota.hidden = true
+  const studants = []
+  const studantsElements = []
 
-    for (var i = 0; i < result.key.split("\n").length; i++) {
-      var line = result.key.split("\n")[i]
+  for (var i = 0; i < result.split("\n").length; i++) {
+    var line = result.split("\n")[i]
 
-      const name = line.split("\t")[0]
-      const n1 = line.split("\t")[1]
-      const n2 = line.split("\t")[2]
-      const n3 = line.split("\t")[3]
-      const rec1 = line.split("\t").length > 4 ? line.split("\t")[4] : ""
-      const rec2 = line.split("\t").length > 5 ? line.split("\t")[5] : ""
-      const rec3 = line.split("\t").length > 6 ? line.split("\t")[6] : ""
-      const rec = line.split("\t").length > 7 ? line.split("\t")[7] : ""
+    const name = line.split("\t")[0]
+    const n1 = line.split("\t")[1]
+    const n2 = line.split("\t")[2]
+    const n3 = line.split("\t")[3]
+    const rec1 = line.split("\t").length > 4 ? line.split("\t")[4] : ""
+    const rec2 = line.split("\t").length > 5 ? line.split("\t")[5] : ""
+    const rec3 = line.split("\t").length > 6 ? line.split("\t")[6] : ""
+    const rec = line.split("\t").length > 7 ? line.split("\t")[7] : ""
 
-      var studant = new Studant(name, n1, n2, n3, rec1, rec2, rec3, rec)
-      studants.push(studant)
+    var studant = new Studant(name, n1, n2, n3, rec1, rec2, rec3, rec)
+    studants.push(studant)
+  }
+
+  var table = document.getElementById("table-list-alu-nota-geral");
+  var rows = table.getElementsByTagName("tr")
+  for (var i = 0; i < rows.length - 1; i += 2) {
+    const line = rows[i].getElementsByTagName("td");
+    var i2 = i
+    const line2 = rows[i2 + 1].getElementsByTagName("td");
+    if (line.length >= 5) {
+      const name = line[1].title;
+      const n1 = line[3].getElementsByTagName("input")[0]
+      const n2 = line[4].getElementsByTagName("input")[0]
+      const n3 = line[5].getElementsByTagName("input")[0]
+      const rec1 = line2[1].getElementsByTagName("input")[0]
+      const rec2 = line2[2].getElementsByTagName("input")[0]
+      const rec3 = line2[3].getElementsByTagName("input")[0]
+      const rec = line[6].getElementsByTagName("input")[0]
+
+      const studant = new Studant(name, n1, n2, n3, rec1, rec2, rec3, rec)
+      studantsElements.push(studant);
     }
+  }
 
-    var table = document.getElementById("table-list-alu-nota-geral");
-    var rows = table.getElementsByTagName("tr")
-    for (var i = 0; i < rows.length - 1; i += 2) {
-      const line = rows[i].getElementsByTagName("td");
-      var i2 = i
-      const line2 = rows[i2 + 1].getElementsByTagName("td");
-      if (line.length >= 5) {
-        const name = line[1].title;
-        const n1 = line[3].getElementsByTagName("input")[0]
-        const n2 = line[4].getElementsByTagName("input")[0]
-        const n3 = line[5].getElementsByTagName("input")[0]
-        const rec1 = line2[1].getElementsByTagName("input")[0]
-        const rec2 = line2[2].getElementsByTagName("input")[0]
-        const rec3 = line2[3].getElementsByTagName("input")[0]
-        const rec = line[6].getElementsByTagName("input")[0]
+  var updateElements = []
+  var emptyNames = []
+  for (var i = 0; i < studants.length; i++) {
+    var empty = true
+    var studant = studants[i]
+    for (var j = 0; j < studantsElements.length; j++) {
+      var studantElement = studantsElements[j]
+      if (checkNames(studant.name, studantElement.name)) {
+        studantElement.n1.value = studant.n1
+        studantElement.n2.value = studant.n2
+        studantElement.n3.value = studant.n3
+        studantElement.rec1.value = studant.rec1
+        studantElement.rec2.value = studant.rec2
+        studantElement.rec3.value = studant.rec3
+        studantElement.rec.value = studant.rec
 
-        const studant = new Studant(name, n1, n2, n3, rec1, rec2, rec3, rec)
-        studantsElements.push(studant);
+        updateElements.push(studantElement.n1);
+        updateElements.push(studantElement.n2);
+        updateElements.push(studantElement.n3);
+        updateElements.push(studantElement.rec1);
+        updateElements.push(studantElement.rec2);
+        updateElements.push(studantElement.rec3);
+        updateElements.push(studantElement.rec);
+
+        empty = false
       }
     }
-
-    var updateElements = []
-    var emptyNames = []
-    for (var i = 0; i < studants.length; i++) {
-      var empty = true
-      var studant = studants[i]
-      for (var j = 0; j < studantsElements.length; j++) {
-        var studantElement = studantsElements[j]
-        if (checkNames(studant.name, studantElement.name)) {
-          studantElement.n1.value = studant.n1
-          studantElement.n2.value = studant.n2
-          studantElement.n3.value = studant.n3
-          studantElement.rec1.value = studant.rec1
-          studantElement.rec2.value = studant.rec2
-          studantElement.rec3.value = studant.rec3
-          studantElement.rec.value = studant.rec
-
-          updateElements.push(studantElement.n1);
-          updateElements.push(studantElement.n2);
-          updateElements.push(studantElement.n3);
-          updateElements.push(studantElement.rec1);
-          updateElements.push(studantElement.rec2);
-          updateElements.push(studantElement.rec3);
-          updateElements.push(studantElement.rec);
-
-          empty = false
-        }
-      }
-      if (empty) {
-        emptyNames.push(studant.name)
-      }
+    if (empty) {
+      emptyNames.push(studant.name)
     }
+  }
 
-    var outputNames = ""
-    if (emptyNames.length > 0) {
-      outputNames = "Nomes não encontrados:\n"
-      for (var i = 0; i < emptyNames.length; i++) {
-        var name = emptyNames[i]
-        outputNames += name + "\n"
-      }
-      emptyNamesLabel.innerHTML = outputNames
+  var outputNames = ""
+  if (emptyNames.length > 0) {
+    outputNames = "Nomes não encontrados:\n"
+    for (var i = 0; i < emptyNames.length; i++) {
+      var name = emptyNames[i]
+      outputNames += name + "\n"
     }
-    emptyNamesLabel.hidden = outputNames == ""
-    delayedUpdates(updateElements, delayMsNota.value);
-
-  });
+    emptyNamesLabelNota.innerHTML = outputNames
+  }
+  emptyNamesLabelNota.hidden = outputNames == ""
+  delayedUpdates(updateElements, delayMsNota.value);
 });
 
 function sleep(ms) {

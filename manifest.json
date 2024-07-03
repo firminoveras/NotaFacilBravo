@@ -1,14 +1,11 @@
 {
     "name": "Nota Fácil Bravo",
     "version": "1.0",
-    "description": "Insira notas de forma mais rápido em turmas no sistema Bravo",
+    "description": "Insira notas e frequência de forma mais rápido em turmas no sistema Bravo",
     "icons": {
         "16": "img/icon16.png",
         "32": "img/icon32.png",
         "128": "img/icon128.png"
-    },
-    "action": {
-        "default_popup": "index.html"
     },
     "content_scripts": [
         {
@@ -20,8 +17,5 @@
             "all_frames": false
         }
     ],
-    "manifest_version": 3,
-    "permissions": [
-        "storage"
-    ]
+    "manifest_version": 3
 }
