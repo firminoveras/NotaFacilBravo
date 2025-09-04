@@ -266,7 +266,7 @@ buttonFrequencia.addEventListener("click", function () {
     var lines = result.split("\n");
     let hasHeader = true;
 
-    if (lines[0].includes("FALSO") || lines[0].includes("VERDADEIRO")) {
+    if (lines[0].includes("FALSO") || lines[0].includes("VERDADEIRO") || lines[0].includes("TRUE") || lines[0].includes("FALSE")) {
         hasHeader = false;
     }
 
@@ -285,11 +285,10 @@ buttonFrequencia.addEventListener("click", function () {
                 var falseNames = [];
                 let clicks = [];
                 lines.forEach(function (line) {
-                    if (line.split("\t")[i + 1] == "FALSO") {
+                    if (line.split("\t")[i + 1] == "FALSO" || line.split("\t")[i + 1] == "FALSE") {
                         falseNames.push(line.split("\t")[0]);
                     }
                 });
-
                 let a = document
                     .getElementById("lista-alunos")
                     .getElementsByTagName("a");
@@ -339,14 +338,14 @@ buttonApplyNota.addEventListener("click", function () {
         var i2 = i;
         const line2 = rows[i2 + 1].getElementsByTagName("td");
         if (line.length >= 5) {
-            const name = line[1].title;
-            const n1 = line[3].getElementsByTagName("input")[0];
-            const n2 = line[4].getElementsByTagName("input")[0];
-            const n3 = line[5].getElementsByTagName("input")[0];
+            const name = line[2].title;
+            const n1 = line[4].getElementsByTagName("input")[0];
+            const n2 = line[5].getElementsByTagName("input")[0];
+            const n3 = line[6].getElementsByTagName("input")[0];
             const rec1 = line2[1].getElementsByTagName("input")[0];
             const rec2 = line2[2].getElementsByTagName("input")[0];
             const rec3 = line2[3].getElementsByTagName("input")[0];
-            const rec = line[6].getElementsByTagName("input")[0];
+            const rec = line[7].getElementsByTagName("input")[0];
 
             const studant = new Studant(name, n1, n2, n3, rec1, rec2, rec3, rec);
             studantsElements.push(studant);
